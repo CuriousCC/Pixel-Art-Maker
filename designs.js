@@ -11,6 +11,9 @@
     // let row = $("#input_height").val();
     // let column = $("#input_width").val();   
     
+    //have an initial grid on load
+    makeGrid();
+
     // When size is submitted by the user, call makeGrid()
     $("#sizePicker").submit(function(event){
     // Prevents default submit to server and page reloading   
