@@ -51,9 +51,29 @@
         e.preventDefault();
         $(this).css("background-color", "#ffffff");
     });
-    // TODO: drag to draw
-    
-    
-    
-    
+
+    // drag to draw
+
+    let isDown = false;
+
+    //mousedown
+    table.on("mousedown", function() {
+            isDown = true;
     });
+    //  released
+    table.on("mouseup", function() {
+            isDown = false;
+    });
+    table.on("mouseleave", function(){
+    isDown = false;
+    });
+    //drag
+    table.on("mousemove", "td", function() {
+        if (isDown) {
+            $(this).css("background-color",chooseColor.val()); 
+        }
+    });
+
+    
+    
+});
