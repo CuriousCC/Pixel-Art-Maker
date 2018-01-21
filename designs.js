@@ -8,15 +8,9 @@
     const submit = $("#submit_btn");
     const toggle = $("#toggle-btn");
     let chooseColor=$("#colorPicker");
-  
-    // have initial grid on load
-   initialGrid();
-   makeGrid();
-   
-   function initialGrid(){
-		let inputHeight = $('#input_height').val();
-		let inputWidth = $('#input_width').val();
-	}
+    // let row = $("#input_height").val();
+    // let column = $("#input_width").val();   
+    
     // When size is submitted by the user, call makeGrid()
     $("#sizePicker").submit(function(event){
     // Prevents default submit to server and page reloading   
