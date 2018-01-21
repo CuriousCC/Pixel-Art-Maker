@@ -8,6 +8,8 @@
     const submit = $("#submit_btn");
     const toggle = $("#toggle-btn");
     let chooseColor=$("#colorPicker");
+    // let row = $("#input_height").val();
+    // let column = $("#input_width").val();   
     
     // When size is submitted by the user, call makeGrid()
     $("#sizePicker").submit(function(event){
@@ -19,6 +21,8 @@
     // Make grid function
     function makeGrid() {
     
+      let row = $("#input_height").val();
+      let column = $("#input_width").val();
     // Clear previous grid
         table.empty(); 
     
