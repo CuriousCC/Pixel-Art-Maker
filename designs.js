@@ -11,7 +11,7 @@
     // let row = $("#input_height").val();
     // let column = $("#input_width").val();   
     
-    //have an initial grid on load
+    // have an initial grid on load
     makeGrid();
 
     // When size is submitted by the user, call makeGrid()
@@ -46,8 +46,9 @@
         $(this).css("background-color", changeColor);
     });
     
-    // remove color from cell on dbl click
-    table.on("dblclick", "td", function(){
+    // remove color from cell on right click
+    table.on("contextmenu", "td", function(e){
+        e.preventDefault();
         $(this).css("background-color", "#ffffff");
     });
     // TODO: drag to draw
