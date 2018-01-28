@@ -2,10 +2,19 @@ body {
     text-align: center;
 }
 
-h1 {
+header{
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+header h1 {
     font-family: Monoton;
-    font-size: 70px;
+    font-size: 30px;
     margin: 0.2em;
+    float: left;
 }
 
 h2 {
