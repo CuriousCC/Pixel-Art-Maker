@@ -1,4 +1,4 @@
-# Pixel Art Maker Project
+# [Pixel Art Maker Project](https://curiouscc.github.io/)
 
 ### Created for Udacity Google Front-End Web Developer Scholarship 2017-18 (phase 1)
 
