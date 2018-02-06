@@ -1,16 +1,38 @@
 # Pixel Art Maker Project
 
-## Table of Contents
+### Created for Udacity Google Front-End Web Developer Scholarship 2017-18 (phase 1)
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+Link to the Udacity Starter Code: [The Pixel Art Maker repository on GitHub] (https://github.com/udacity/project-pixel-art-maker-starter)
 
-## Instructions
+### Basic requirements:
+* Write JavaScript code that lets the user to create a grid of squares representing their design, and apply colors to those squares to create a digital masterpiece!
 
-To get started, open `designs.js` and start building out the app's functionality.
+* Your users should be able to:
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+    - Dynamically set the size of the table as an N by M grid.
+    - Choose a color.
+    - Click a cell in the grid to fill that cell with the chosen color.
 
-## Contributing
+### Additional features added:
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+- Click and Drag Painting/Erasing
+- Erasing on right click
+- Choose Canvas Background Color
+- Buttons:
+  - Toggle Grid
+  - Clear Canvas
+  - Brush
+  - Eraser
+  
+### To Do's:
+  - Add Save Option
+  - Add Share buttons
+  - Add Zoom in and out
+  - Add draggable side panel
+  - Implement Jquery UI accordion
+  - Add color palette
+  - Use CSS Grid for Responsive Design
+  - Add media queries for Responsive design
+  - Refactor code continuously as I learn
+
+Preview project on [Codepen](https://codepen.io/CuriousCC/pen/gvwgRq) or on [GitHub Pages](
