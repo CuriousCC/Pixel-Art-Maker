@@ -1,40 +1,307 @@
 body {
+    margin: 0 auto;
+  }
+
+  #wrapper {
+    width: 100%;
+    position: relative;
+  /*   overflow:hidden; */
+    padding: 0;
+    background: url("http://maxpixel.freegreatpicture.com/static/photo/1x/Blur-Pastel-Blurred-Background-Blurry-Colours-2819026.jpg");
+    background-size: cover;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
     text-align: center;
-}
+    margin: 0 auto;
+    top: 0;
+  }
 
-h1 {
-    font-family: Monoton;
-    font-size: 70px;
-    margin: 0.2em;
-}
+  header {
+    position: relative;
+    display: block;
+    height: 200px;
+    overflow:hidden;
+  }
 
-h2 {
-    margin: 1em 0 0.25em;
-}
+  #header-img,
+  #footer-img {
+    position: absolute;
+    background: url("http://eastfarthing.com/blog/2016-05-06-palette/aek-32.png");
+    background-position: center;
+    width: 100%;
+    opacity: 0.4;
+    border-radius: 5px;
+  }
 
-h2:first-of-type {
-    margin-top: 0.5em;
-}
+  #header-title{
+    font-size: 80px; 
+    margin: 0 auto;
+    font-family: 'dpuntillasALaceRegular';
+    font-weight: normal;
+    font-style: normal; 
+  }
 
-table,
-tr,
-td {
+  #header-img {
+    height: 190px;
+    background-size:250px;
+  }
+
+  #footer-img{
+    height:110px;
+    background-size:230px;
+  }
+
+  .main {
+    display: inline;
+    width:100%;
+  }
+
+  .tabs {
+    display:inline;
+    margin-left:5%;
+    margin-top:7%;
+    padding: 0;
+    height: 40px;
+    text-align: center;
+    float:left;
+    width:30%;
+  
+  }
+
+  .tab {
+    overflow:hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 45px;
+    text-align: center;
+    border-radius: 15px, 15px, 0;
+    background: #f6f6f6;
+    color: black;;
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1;
+    font-family: 'PunkNovaRegular';
+    font-weight: normal;
+    font-style: normal; 
+    font-size:20px;
+    font-weight: bold;
+    padding-top:10px;
+  }
+
+  .tab:hover {
+    background: #f6f6f6;
+    color: black;
+    box-shadow: 0px 0px 1px 1px #000;
+    font-weight: bold;
+  }
+  
+  .tab-content {
+    display: block;
+    position: relative;
+    overflow: auto;
+    font-size: 1.2em;
+    font-weight: normal;
+    padding: 10px;
+    border: 1px ridge #ddd;
+    font-size: 1.8em;
+    height: 200px;
+    background-color: "";
+    border-radius: 0 0 10px 10px;
+    z-index: 1;
+    font-family: "Love Ya Like A Sister", cursive;
+  
+  }
+
+  [data-tab-index="0"]{
+    background-color: #ff8080;
+  }
+
+  [data-tab-index="1"]{
+    background-color:  #ffe680;
+  }
+
+  [data-tab-index="2"]{
+    background-color:  #9fdf9f;
+  }
+
+  #welcome {
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  #welcome > ol > li {
+    text-align:justify;
+  }
+
+  #info{
+    background-color: #cce6ff;
+    padding:15px;
+    margin-top:0;
+    border-radius:5px;
+    font-size:18px;
+  }
+  
+  #sizePicker {
+    font-size: 15px;
+    display: inline;
+    align-content: center;
+  }
+
+  input[type="number"] {
+    width: 20%;
+  }
+
+  #submit_btn {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 5px;
+    font-family: "Love Ya Like A Sister", cursive;
+    font-weight:bold; 
+  }
+
+  #submit_btn:hover {
+    background-color: #80d4ff;
+    box-shadow: 0px 1px #000;
+    font-family: "Love Ya Like A Sister", cursive;
+  }
+
+  #grid-header {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  #drawing-tools > * {
+    display: block;
+    position: relative;
+    font-size: 15px;
+    margin: 5px auto;
+    font-weight:bold;
+  }
+
+  input[type="color"] {
+    width: 70px;
+    height: 25px;
+    border-radius: 10px 0px 10px 0px;
+    border: 5px solid;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  #bg-color:hover,
+  #colorPicker:hover {
+    box-shadow: 0px 0px 1px 1px #000;
+  }
+  
+  #drawing-tools > h2 {
+    font-size: 18px;
+    margin-top: 0;
+    padding: 5px;
+  }
+
+  #brush-btn,
+  #eraser-btn,
+  #clear-btn,
+  #toggle-btn {
+    background-color: #e6e6e6;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Love Ya Like A Sister", cursive;
+  
+  }
+  #brush-btn:hover,
+  #eraser-btn:hover,
+  #clear-btn:hover,
+  #toggle-btn:hover {
+    background-color: #b3b3b3;
+    box-shadow: 0px 0px 1px 1px #000;
+  }
+
+  #canvas {
+    text-align: center;
+    display: inline;
+    float: right;
+    position: relative;
+    margin: 0;
+    width: 60%;
+  }
+
+  #canvas h2{
+    font-family: 'WindandBubblesRegular';
+    font-weight: normal;
+    font-style: normal; 
+    font-size:40px;
+  }
+
+  table,
+  tr,
+  td {
     border: 1px solid black;
-}
+  }
 
-table {
+  table {
     border-collapse: collapse;
     margin: 0 auto;
-}
+    background-color: #ffffff;
+    box-shadow: 1px 1px 10px 1px #000; 
+    margin-bottom:5%;
+  }
 
-tr {
-    height: 30px;
-}
+  tr {
+    height: 20px;
+  }
 
-td {
-    width: 30px;
-}
+  td {
+    width: 20px;
+  }
 
-input[type=number] {
+  td:hover {
+    box-shadow: 0px 0px 1px 1px #000;
+  }
+
+  .toggle {
+    border: none;
+  }
+
+  input[type="number"] {
     width: 6em;
-}
+  }
+  footer {
+    padding: 20px;
+    font-size: 20px;
+    font-family: 'Flavors', cursive;
+    overflow:hidden;
+    clear: both;
+    height: 110px;
+    z-index:1;
+    margin-top:5%;
+  }
+
+  footer a {
+    text-decoration: none;
+    padding-bottom:10px;
+    cursor:pointer;
+  }
+
+  footer a:hover{
+  transform: scale(1.2, 1.2);
+  -webkit-transform:scale(1.2, 1.2);
+  -moz-transform:scale(1.2, 1.2);
+  color: #000000;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  }
+  
+  .highlighted {
+    background-color: #f6f6f6;
+    color: black;
+  }
+  

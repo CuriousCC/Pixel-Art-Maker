@@ -1,79 +1,118 @@
- // TODO: provide initial 10x10 grid on start?
-
- 
- $(function(){
+$(document).ready(function () {
 
     // Define variables
     let table = $("#pixel_canvas");
-    const submit = $("#submit_btn");
-    const toggle = $("#toggle-btn");
-    let chooseColor=$("#colorPicker");
-    // let row = $("#input_height").val();
-    // let column = $("#input_width").val();   
-    
-    // have an initial grid on load
-    makeGrid();
+    let chooseColor = $("#colorPicker");
+    let bgColor = $("#bg-color");
+
+    makeGrid(); // have an initial grid on load
 
     // When size is submitted by the user, call makeGrid()
-    $("#sizePicker").submit(function(event){
-    // Prevents default submit to server and page reloading   
-        event.preventDefault();
+    $("#sizePicker").submit(function (event) {
+        event.preventDefault(); // Prevents default submit to server and page reloading
         makeGrid();
     });
-    
+
     // Make grid function
     function makeGrid() {
-    
-      let row = $("#input_height").val();
-      let column = $("#input_width").val();
-    // Clear previous grid
-        table.empty(); 
-    
-    // Select size input
-        //create the rows
-        for(let i=0; i<row; i++){
+        let row = $("#input_height").val();
+        let column = $("#input_width").val();
+        table.empty(); // Clear previous grid
+
+        // Select size input
+        //create rows
+        for (let i = 0; i < row; i++) {
             table.append("<tr></tr>");
-        };
-        //create the columns
-        for(let j=0; j<column; j++){
+        }
+        //create columns
+        for (let j = 0; j < column; j++) {
             table.children().append("<td></td>");
-        };
-    };
-    
+        }
+    }
+
     // color a cell
-    table.on("click", "td", function(){
-        let changeColor=chooseColor.val();
+    table.on("click", "td", function () {
+        let changeColor = chooseColor.val();
         $(this).css("background-color", changeColor);
     });
-    
+
     // remove color from cell on right click
-    table.on("contextmenu", "td", function(e){
+    table.on("contextmenu", "td", function (e) {
         e.preventDefault();
-        $(this).css("background-color", "#ffffff");
+        $(this).css("background-color", "");
+        return false; //prevents context menu on right click
     });
 
     // drag to draw
-
     let isDown = false;
 
     //mousedown
-    table.on("mousedown", function() {
-            isDown = true;
+    table.on("mousedown", function () {
+        isDown = true;
     });
     //  released
-    table.on("mouseup", function() {
-            isDown = false;
+    table.on("mouseup", function () {
+        isDown = false;
     });
-    table.on("mouseleave", function(){
-    isDown = false;
+
+    table.on("mouseleave", function () {
+        isDown = false;
     });
-    //drag
-    table.on("mousemove", "td", function() {
+
+    //drag to paint
+    table.on("mousemove", "td", function () {
         if (isDown) {
-            $(this).css("background-color",chooseColor.val()); 
+            //if radio button is brush selected
+            // let colorToPaint = chooseColor.val()
+            // else colorToPaint = background
+            $(this).css("background-color", chooseColor.val());
         }
     });
 
+    //choose a bg color
+    $("#bg-color").on("change", function () {
+        table.css("background-color", $(this).val());
+    });
+
+     //collapsible tabs
+    $(".tab")
+        .click(function (e) {
+            e.preventDefault;
+            $(this).toggleClass("highlighted");
+            $(this)
+                .next(".tab-content")
+                .slideToggle("medium");
+        })
+        .next()
+        .hide();
+
+    //tools buttons
+
+    //clear all button
+    $("#clear-btn").on("click", function () {
+        $("td").css("background-color", "#ffffff");
+    });
+
+    //Toggle grid button
+    $("#toggle-btn").on("click", function () {
+        $("tr, td").toggleClass("toggle");
+    });
+
+    //Brush button
+    $("#brush-btn").click(function () {
+        table.on("mousemove", "td", function () {
+            if (isDown) {
+                $(this).css("background-color", chooseColor.val());
+            }
+        });
+    });
     
-    
+    //Eraser button
+    $("#eraser-btn").click(function () {
+        table.on("mousemove", "td", function () {
+            if (isDown) {
+                $(this).css("background-color", "");
+            }
+        });
+    });
 });
