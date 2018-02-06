@@ -35,4 +35,4 @@ Link to the Udacity Starter Code: [The Pixel Art Maker repository on GitHub] (ht
   - Add media queries for Responsive design
   - Refactor code continuously as I learn
 
-Preview project on [GitHub Pages](https://curiouscc.github.io/) or in [Codepen](https://codepen.io/CuriousCC/pen/gvwgRq).
+## Preview project on [GitHub Pages](https://curiouscc.github.io/) or in [Codepen](https://codepen.io/CuriousCC/pen/gvwgRq).
