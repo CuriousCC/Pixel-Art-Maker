@@ -5,6 +5,7 @@ $(document).ready(function () {
     let chooseColor = $("#colorPicker");
     let bgColor = $("#bg-color");
 
+    bgColor.val("#ffffff"); // credit for help to https://discussions.udacity.com/u/m.w/summary
     makeGrid(); // have an initial grid on load
 
     // When size is submitted by the user, call makeGrid()
@@ -71,7 +72,7 @@ $(document).ready(function () {
 
     //choose a bg color
     $("#bg-color").on("change", function () {
-        table.css("background-color", $(this).val());
+        $("td").css("background-color", $(this).val()); // credit for help to https://discussions.udacity.com/u/m.w/summary
     });
 
      //collapsible tabs
@@ -91,6 +92,7 @@ $(document).ready(function () {
     //clear all button
     $("#clear-btn").on("click", function () {
         $("td").css("background-color", "#ffffff");
+        bgColor.val("#ffffff"); // credit for help to https://discussions.udacity.com/u/m.w/summary
     });
 
     //Toggle grid button
@@ -111,8 +113,11 @@ $(document).ready(function () {
     $("#eraser-btn").click(function () {
         table.on("mousemove", "td", function () {
             if (isDown) {
-                $(this).css("background-color", "");
+                $(this).css("background-color", bgColor.val()); // credit for help to https://discussions.udacity.com/u/m.w/summary
             }
         });
+        table.on("click", "td", function() {
+            $(this).css("background-color", bgColor.val());// credit for help to https://discussions.udacity.com/u/m.w/summary
+    });
     });
 });
