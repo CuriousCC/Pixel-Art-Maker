@@ -40,7 +40,7 @@ $(document).ready(function () {
     // remove color from cell on right click
     table.on("contextmenu", "td", function (e) {
         e.preventDefault();
-        $(this).css("background-color", "");
+        $(this).css("background-color", bgColor.val());
         return false; //prevents context menu on right click
     });
 
@@ -48,7 +48,8 @@ $(document).ready(function () {
     let isDown = false;
 
     //mousedown
-    table.on("mousedown", function () {
+    table.on("mousedown", function (e) {
+        e.preventDefault(); // credit for suggestion to https://discussions.udacity.com/u/kara.ertan9/summary
         isDown = true;
     });
     //  released
