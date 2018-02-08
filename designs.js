@@ -63,9 +63,6 @@ $(document).ready(function () {
     //drag to paint
     table.on("mousemove", "td", function () {
         if (isDown) {
-            //if radio button is brush selected
-            // let colorToPaint = chooseColor.val()
-            // else colorToPaint = background
             $(this).css("background-color", chooseColor.val());
         }
     });
@@ -74,18 +71,6 @@ $(document).ready(function () {
     $("#bg-color").on("change", function () {
         $("td").css("background-color", $(this).val()); // credit for help to https://discussions.udacity.com/u/m.w/summary
     });
-
-     //collapsible tabs
-    $(".tab")
-        .click(function (e) {
-            e.preventDefault;
-            $(this).toggleClass("highlighted");
-            $(this)
-                .next(".tab-content")
-                .slideToggle("medium");
-        })
-        .next()
-        .hide();
 
     //tools buttons
 
@@ -107,6 +92,9 @@ $(document).ready(function () {
                 $(this).css("background-color", chooseColor.val());
             }
         });
+        table.on("click", "td", function() {
+            $(this).css("background-color", chooseColor.val());
+        });
     });
     
     //Eraser button
@@ -118,6 +106,18 @@ $(document).ready(function () {
         });
         table.on("click", "td", function() {
             $(this).css("background-color", bgColor.val());// credit for help to https://discussions.udacity.com/u/m.w/summary
+        });
     });
-    });
+
+    //collapsible tabs
+    $(".tab")
+    .click(function (e) {
+        e.preventDefault;
+        $(this).toggleClass("highlighted");
+        $(this)
+            .next(".tab-content")
+            .slideToggle("medium");
+    })
+    .next()
+    .hide();
 });
