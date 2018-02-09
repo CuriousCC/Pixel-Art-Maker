@@ -1,4 +1,4 @@
-# Pixel Art Maker Project
+# [Pixel Art Maker Project](https://curiouscc.github.io/)
 
 ### Created for Udacity Google Front-End Web Developer Scholarship 2017-18 (phase 1)
 
@@ -35,4 +35,4 @@ Link to the Udacity Starter Code: [The Pixel Art Maker repository on GitHub] (ht
   - Add media queries for Responsive design
   - Refactor code continuously as I learn
 
-Preview project on [Codepen](https://codepen.io/CuriousCC/pen/gvwgRq) or on [GitHub Pages](
+## Preview project on [GitHub Pages](https://curiouscc.github.io/) or in [Codepen](https://codepen.io/CuriousCC/pen/gvwgRq).

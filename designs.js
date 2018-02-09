@@ -5,6 +5,7 @@ $(document).ready(function () {
     let chooseColor = $("#colorPicker");
     let bgColor = $("#bg-color");
 
+    bgColor.val("#ffffff"); // credit for help to https://discussions.udacity.com/u/m.w/summary
     makeGrid(); // have an initial grid on load
 
     // When size is submitted by the user, call makeGrid()
@@ -39,7 +40,7 @@ $(document).ready(function () {
     // remove color from cell on right click
     table.on("contextmenu", "td", function (e) {
         e.preventDefault();
-        $(this).css("background-color", "");
+        $(this).css("background-color", bgColor.val());
         return false; //prevents context menu on right click
     });
 
@@ -47,7 +48,8 @@ $(document).ready(function () {
     let isDown = false;
 
     //mousedown
-    table.on("mousedown", function () {
+    table.on("mousedown", function (e) {
+        e.preventDefault(); // credit for suggestion to https://discussions.udacity.com/u/kara.ertan9/summary
         isDown = true;
     });
     //  released
@@ -62,35 +64,21 @@ $(document).ready(function () {
     //drag to paint
     table.on("mousemove", "td", function () {
         if (isDown) {
-            //if radio button is brush selected
-            // let colorToPaint = chooseColor.val()
-            // else colorToPaint = background
             $(this).css("background-color", chooseColor.val());
         }
     });
 
     //choose a bg color
     $("#bg-color").on("change", function () {
-        table.css("background-color", $(this).val());
+        $("td").css("background-color", $(this).val()); // credit for help to https://discussions.udacity.com/u/m.w/summary
     });
-
-     //collapsible tabs
-    $(".tab")
-        .click(function (e) {
-            e.preventDefault;
-            $(this).toggleClass("highlighted");
-            $(this)
-                .next(".tab-content")
-                .slideToggle("medium");
-        })
-        .next()
-        .hide();
 
     //tools buttons
 
     //clear all button
     $("#clear-btn").on("click", function () {
         $("td").css("background-color", "#ffffff");
+        bgColor.val("#ffffff"); // credit for help to https://discussions.udacity.com/u/m.w/summary
     });
 
     //Toggle grid button
@@ -105,14 +93,32 @@ $(document).ready(function () {
                 $(this).css("background-color", chooseColor.val());
             }
         });
+        table.on("click", "td", function() {
+            $(this).css("background-color", chooseColor.val());
+        });
     });
     
     //Eraser button
     $("#eraser-btn").click(function () {
         table.on("mousemove", "td", function () {
             if (isDown) {
-                $(this).css("background-color", "");
+                $(this).css("background-color", bgColor.val()); // credit for help to https://discussions.udacity.com/u/m.w/summary
             }
         });
+        table.on("click", "td", function() {
+            $(this).css("background-color", bgColor.val());// credit for help to https://discussions.udacity.com/u/m.w/summary
+        });
     });
+
+    //collapsible tabs
+    $(".tab")
+    .click(function (e) {
+        e.preventDefault;
+        $(this).toggleClass("highlighted");
+        $(this)
+            .next(".tab-content")
+            .slideToggle("medium");
+    })
+    .next()
+    .hide();
 });
