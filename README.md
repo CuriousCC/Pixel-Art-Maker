@@ -2,7 +2,7 @@
 
 ### Created for Udacity Google Front-End Web Developer Scholarship 2017-18 (phase 1)
 
-Link to the Udacity Starter Code: [The Pixel Art Maker repository on GitHub](https://github.com/udacity/project-pixel-art-maker-starter)
+Link to the Udacity Starter Code: [The Pixel Art Maker repository](https://github.com/udacity/project-pixel-art-maker-starter) on GitHub
 
 ### Basic requirements:
 * Write JavaScript code that lets the user to create a grid of squares representing their design, and apply colors to those squares to create a digital masterpiece!
